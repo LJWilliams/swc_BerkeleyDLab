@@ -1,0 +1,273 @@
+    1  whoami
+    2  pwd
+    3  cd /Volumes/PetitDisque/2013-11-23-dlab/
+    4  ls 
+    5  ls -F
+    6  ls -G
+    7  pwd
+    8  cd shell/
+    9  ls -F
+   10  touch testfile
+   11  ls -f
+   12  ls -F
+   13  mkdir tmp
+   14  ls -F
+   15  ls -G
+   16  mv testfile tmp/
+   17  ls -F
+   18  cd tmp/
+   19  ls
+   20  cd ..
+   21  ls -F
+   22  rm tmp/
+   23  rmdir tmp/
+   24  cd tmp/
+   25  ls
+   26  rm testfile 
+   27  ls -F
+   28  cd ..
+   29  ls -F
+   30  rmdir tmp/
+   31  ls -F
+   32  cd exercises/
+   33  ls
+   34  cat haiku.txt 
+   35  cat haiku.txt | less
+   36  clear
+   37  ls -F
+   38  pwd
+   39  ls -l
+   40  man ls | less
+   41  #Exercise
+   42  Exercise
+   43  #Exercise
+   44  # Use the manual page for ls to find out what you would
+   45  # expect from using the arguments '-l','-t', and '-r'
+   46  # at the same time
+   47  ls -l -t -r
+   48  ls -l
+   49  ls -t
+   50  ls -r
+   51  ls -l -t -r
+   52  # Now try ls -lS
+   53  # ls -lt
+   54  $ ls -1
+   55  # ls -1
+   56  ls -lt
+   57  ls -lS
+   58  ls -1
+   59  clear
+   60  head haiku.txt 
+   61  tail haiku.txt 
+   62  head haiku.txt 
+   63  clear
+   64  ls -F
+   65  cat *.vcf
+   66  cat *.vcf | less
+   67  head *.vcf
+   68  tail 1000gp.vcf 
+   69  head -n 15
+   70  head -n 15 1000gp.vcf 
+   71  head 1000gp.vcf -n 5
+   72  head -n 5 1000gp.vcf 
+   73  clear
+   74  head -n 5 1000gp.vcf 
+   75  head -n 2 1000gp.vcf | tail -n 1
+   76  #Exercise
+   77  #Show me the 10th through 20th lines of haiku.txt
+   78  head -n 20 haiku.txt | tail
+   79   # Now show me the 5th line from the bottom of haiku.txt
+   80  tail haiku.txt | head -n 5 | tail -n 1
+   81  clear
+   82  tail haiku.txt | head -n 5 | tail -n 1 > testfile
+   83  ls
+   84  cat testfile
+   85  tail haiku.txt | head -n 5 | tail -n 1 > testfile
+   86  ls -F
+   87  cat testfile
+   88  head -n 20 haiku.txt | tail > testfile
+   89  ls
+   90  cat testfile
+   91  clear
+   92  cat testfile
+   93  tail haiku.txt | head -n 5 | tail -n 1 >> testfile
+   94  clear
+   95  cat testfile 
+   96  clear
+   97  cat < testfile 
+   98  head < testfile
+   99  clear
+  100  echo "Prints this information to stout"
+  101  rm testfile 
+  102  ls -F
+  103  ls ~
+  104  ls ..
+  105  pwd
+  106  ls ../../
+  107  clear
+  108  pwd
+  109  cd ..
+  110  pwd
+  111  cd data/THOMAS/
+  112  ls -F
+  113  ls *1
+  114  ls *.txt
+  115  ls /usr/bin/*.sh
+  116  ls *4*1
+  117  #Exercise
+  118  #Do each of the following with a single 'ls' command 
+  119  #without going to a different directory
+  120  #1. List all the filenames in '/bin' that contain 'a'
+  121  #2. List all the filenames in '/bin' that contain either 'a' or 'b'
+  122  #3. List all the filenames in '/bin' that contain both 'a' AND 'b'
+  123  ls /bin/*a*
+  124  ls /bin/*a*b
+  125  ls /bin/*a*b*
+  126  ls /bin/*a* /bin/*b*
+  127  ls /bin/*a* | /bin/*b*
+  128  #Exercise
+  129  #Do each of the following with a single 'ls' command 
+  130  #without going to a different directory
+  131  #1. List all the filenames in '/bin' that contain 'a'
+  132  #2. List all the filenames in '/bin' that contain either 'a' or 'd'
+  133  #3. List all the filenames in '/bin' that contain both 'a' AND 'd'
+  134  ls /bin/*a*
+  135  ls /bin/*a* /bin/*b*
+  136  ls /bin/*a* /bin/*d*
+  137  ls /bin/*a* | /bin/*d*
+  138  ls /bin/*a* | ls /bin/*d*
+  139  ls /bin/*a* | ls *d*
+  140  man ls | less
+  141  ls /bin/*a*d*
+  142  ls /bin/*d*a*
+  143  which find
+  144  which ls
+  145  clear
+  146  pwd
+  147  cd ..
+  148  pwd
+  149  wc Bert/* gerdal/*4*
+  150  ls
+  151  mkdir alldata
+  152  rmdir alldata/
+  153  cd Bert/
+  154  cat au*
+  155  cat au*>alldata
+  156  ls
+  157  ls alldata 
+  158  ls -F | less
+  159  # Exercise
+  160  # Use >> to append the contents of all the files
+  161  # whose names contain the number 4 in the directory:
+  162  # /data/gerdal
+  163  cat ../gerdal/*4* >> alldata 
+  164  cat alldata | less
+  165  mv alldata ..
+  166  ls
+  167  cd ..
+  168  ls
+  169  ls -F
+  170  cp alldata alldata_backup
+  171  ls
+  172  ls -F
+  173  mkdir tmp
+  174  mv alldata_backup tmp/
+  175  ls -F
+  176  ls
+  177  mv tmp/alldata_backup .
+  178  ls
+  179  rmdir tmp
+  180  mv alldata_backup /tmp/
+  181  ls
+  182  mv alldata  alldata_IMPORTANT
+  183  ls
+  184  rm /tmp/alldata_backup 
+  185  ls
+  186  #Exercise
+  187  #Rename the file alldata_IMPORTANT back to alldata
+  188  #Create a directory called foo
+  189  #Copy alldata into foo
+  190  mv alldata_IMPORTANT alldata
+  191  mkdir foo
+  192  cp alldata foo
+  193  ls
+  194  clear
+  195  wc Bert/* gerdal/*4*
+  196  wc all_data
+  197  wc alldata 
+  198  wc Bert/* gerdal/*4* | tail -n 1
+  199  tail -n 2
+  200  cd /tmp
+  201  pwd
+  202  nano toBeSorted
+  203  sort toBeSorted
+  204  #Exercise
+  205  # Use the echo command and append operator >> to append your name to toBeSorted, sort it, then make a new file called Sorted
+  206  echo Lynne > toBeSorted 
+  207  echo Alice > toBeSorted 
+  208  echo Bob >> toBeSorted 
+  209  echo Diane >> toBeSorted 
+  210  echo Charles >> toBeSorted 
+  211  echo Lynne >> toBeSorted 
+  212  sort toBeSorted > Sorted
+  213  cat Sorted 
+  214  cd /Volumes/PetitDisque/2013-11-23-dlab/shell/data/
+  215  ls
+  216  wc Bert/* | sort -k 3 -n
+  217  #Exercise
+  218  #Use the man command to find out how to sort the output from 
+  219  #wc in reverse order
+  220  # Combin wc, sort, head, and tail so that only the wc information
+  221  # information for the largest file is listed
+  222  wc Bert/* gerdal/*4* |sort -k 3 -n | tail -n 2 | head -n 1
+  223  nano smallest
+  224  cd Bert
+  225  chmod a+x ../smallest 
+  226  ../smallest 
+  227  ls -l ../smallest 
+  228  pwd
+  229  grep Range *
+  230  #Exercise
+  231  # Create an executable script called
+  232  # smallestrange in the data directory
+  233  # that is similar to the smallest script,
+  234  # but prints the file containing the 
+  235  # smallest range. Use the grep, sort, and
+  236  # tail commands.
+  237  pwd
+  238  cd ..
+  239  pwd
+  240  find . -print
+  241  find . -type f -exec grep Volume {} \;
+  242  find . -type f -print | xargs grep Volume
+  243  #Exercise
+  244  # Navigate to the data directory. 
+  245  # Use one find command to perform
+  246  # each of the operations listed below
+  247  # (except #2, which doesn't need a find
+  248  # command):
+  249  #
+  250  # 1. Find any file whose name is "Notes"
+  251  # within the data directory and delete it
+  252  #
+  253  # 2. Create a new directory called cleaneddata
+  254  #
+  255  # 3. Move all of the files within data to the
+  256  # cleaneddata directory
+  257  #
+  258  # 4. Rename all of the files to ensure they end in
+  259  # .txt (note: it is okay for the file name to end
+  260  # .txt.txt)
+  261  #
+  262  # Hint: If you make a mistake and need to start over
+  263  # 
+  264  # 1. Navigate to the shell directory
+  265  #
+  266  # 2. Delete the data directory
+  267  #
+  268  # 3. Enter the command
+  269  # git checkout -- data
+  270  # and you will see that the data directory has reappeared
+  271  pwd
+  272  cd /Volumes/PetitDisque/swc_BerkeleyDLab/
+  273  history > shell_history.txt
